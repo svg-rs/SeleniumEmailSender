@@ -1,6 +1,7 @@
 package outlook
 
 import (
+	"fmt"
 	"log"
 	"math/rand"
 	"os"
@@ -140,9 +141,9 @@ func Send(subject, message, username, password string,
 		if err != nil {
 			return err
 		}
-		var sleeptime time.Duration = time.Duration(rand.Intn(501)+100) * time.
+		var sleepTime time.Duration = time.Duration(rand.Intn(201)+100) * time.
 			Millisecond
-		time.Sleep(sleeptime)
+		time.Sleep(sleepTime)
 	}
 
 	err = messageRecipient.SendKeys(selenium.TabKey)
@@ -152,15 +153,16 @@ func Send(subject, message, username, password string,
 
 	time.Sleep(200 * time.Millisecond)
 
+	infoLogger.Println("Waiting for subject input...")
 	var subjectField selenium.WebElement
 	subjectField, err = driver.FindElement(selenium.ByCSSSelector, "input[aria-label='Add a subject']")
 	err = subjectField.SendKeys(subject)
 	if err != nil {
 		return err
 	}
-
+	infoLogger.Println("Subject input filled!")
 	time.Sleep(500 * time.Millisecond)
-
+	infoLogger.Println("Waiting for message input...")
 	var messageField selenium.WebElement
 	messageField, err = driver.FindElement(selenium.ByXPATH, "//div[contains(@class, 'dFCbN') and contains(@class, 'dnzWM')]\n")
 	if err != nil {
@@ -174,9 +176,9 @@ func Send(subject, message, username, password string,
 	if err != nil {
 		return err
 	}
-
+	infoLogger.Println("Message input filled!")
 	time.Sleep(500 * time.Millisecond)
-
+	infoLogger.Println("Waiting for send button...")
 	var sendButton selenium.WebElement
 	sendButton, err = driver.FindElement(selenium.ByCSSSelector, "button[aria-label='Send']")
 	if err != nil {
@@ -186,7 +188,13 @@ func Send(subject, message, username, password string,
 	if err != nil {
 		return err
 	}
-	time.Sleep(2321321123 * time.Second)
+	infoLogger.Println("Send button clicked!")
 
+	var continu string
+	fmt.Println("Press enter to continue and restart...")
+	fmt.Scanln(&continu)
+	if continu == "" {
+		return Send(subject, message, username, password, recipients)
+	}
 	return nil
 }

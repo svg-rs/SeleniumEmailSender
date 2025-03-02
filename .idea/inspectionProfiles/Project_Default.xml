@@ -1,10 +1,254 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+    <inspection_tool class="GoAssignmentToReceiver" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoBoolExpressions" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoBuildTag" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoCommentLeadingSpace" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoCommentStart" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoContextTodo" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoConvertStringLiterals" enabled="true" level="INFORMATION" enabled_by_default="true">
+      <scope name="Project Files" level="INFORMATION" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoCyclicImports" enabled="true" level="ERROR" enabled_by_default="true">
+      <scope name="Project Files" level="ERROR" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoDebugDirective" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoDebugMinGoSdkVersion" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoDeferGo" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoDeferInLoop" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoDeprecation" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoDfaConstantCondition" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
     <inspection_tool class="GoDfaErrorMayBeNotNil" enabled="true" level="WARNING" enabled_by_default="true">
-      <methods>
-        <method importPath="github.com/tebeka/selenium" receiver="WebDriver" name="FindElement" />
-      </methods>
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoDfaNilDereference" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoDirectComparisonOfErrors" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoDisabledGopathIndexing" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoDivisionByZero" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoEmptyDeclaration" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoErrorStringFormat" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoErrorsAs" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoExportedElementShouldHaveComment" enabled="true" level="INFORMATION" enabled_by_default="true">
+      <scope name="Project Files" level="INFORMATION" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoExportedFuncWithUnexportedType" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoExportedOwnDeclaration" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoFuzzingSupport" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoImportUsedAsName" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoInfiniteFor" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoInterfaceToAny" enabled="true" level="INFORMATION" enabled_by_default="true">
+      <scope name="Project Files" level="INFORMATION" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoIrregularIota" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoLeadingWhitespaceInDirectiveComment" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoLoopClosure" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoMixedReceiverTypes" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoNameStartsWithPackageName" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoPreferNilSlice" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoPrintFunctions" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoReceiverNames" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoRedundantBlankArgInRange" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoRedundantComma" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoRedundantConversion" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoRedundantImportAlias" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoRedundantParens" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoRedundantSecondIndexInSlices" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoRedundantSemicolon" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoRedundantTrueInForCondition" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoRedundantTypeDeclInCompositeLit" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoReservedWordUsedAsName" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoSelfAssignment" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoShadowedVar" enabled="true" level="TEXT ATTRIBUTES" enabled_by_default="true">
+      <scope name="Project Files" level="TEXT ATTRIBUTES" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoShift" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoSnakeCaseUsage" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoStandardMethods" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoStringsReplaceCount" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoStructInitializationWithoutFieldNames" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoSwitchMissingCasesForIotaConsts" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoTestName" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoTypeAssertionOnErrors" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoTypeParameterInLowerCase" enabled="true" level="INFORMATION" enabled_by_default="true">
+      <scope name="Project Files" level="INFORMATION" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoUnhandledErrorResult" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoUnitSpecificDurationSuffix" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoUnnecessarilyExportedIdentifiers" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoUnreachableCode" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoUnsortedImport" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoUnusedCallResult" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoUnusedConst" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoUnusedExportedFunction" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoUnusedExportedType" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoUnusedFunction" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoUnusedGlobalVariable" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoUnusedParameter" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoUnusedType" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoUnusedTypeParameter" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoVarAndConstTypeMayBeOmitted" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoVetAtomic" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoVetCopyLock" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoVetFailNowInNotTestGoroutine" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoVetImpossibleInterfaceToInterfaceAssertion" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoVetIntToStringConversion" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoVetLostCancel" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoVetStructTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoVetUnmarshal" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoVetUnsafePointer" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="GoVulnerableCodeUsages" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
     </inspection_tool>
   </profile>
 </component>
