@@ -2,8 +2,8 @@ package outlook
 
 import (
 	"log"
+	"math/rand"
 	"os"
-	"strings"
 	"time"
 
 	"github.com/tebeka/selenium"
@@ -15,8 +15,10 @@ var (
 	errorLogger   = log.New(os.Stderr, "[ERROR] ", log.Ldate|log.Ltime|log.Lshortfile)
 )
 
-func Send(message, username, password string, recipients []string) (err error) {
-	if message == "" || username == "" || password == "" || len(recipients) == 0 {
+func Send(subject, message, username, password string,
+	recipients []string) (err error) {
+	if message == "" || username == "" || password == "" || len(
+		recipients) == 0 || subject == "" {
 		errorLogger.Println("Message or username or password is missing!")
 		return
 	}
@@ -48,7 +50,7 @@ func Send(message, username, password string, recipients []string) (err error) {
 	}
 	infoLogger.Println("Outlook opened!")
 	infoLogger.Println("Logging in...")
-	time.Sleep(1 * time.Second)
+	time.Sleep(2 * time.Second)
 	var loginButton selenium.WebElement
 	loginButton, err = driver.FindElement(selenium.ByXPATH, "//input[@id='i0116']")
 	if err != nil {
@@ -56,7 +58,7 @@ func Send(message, username, password string, recipients []string) (err error) {
 	}
 	loginButton.Click()
 	infoLogger.Println("Login page loaded!")
-	time.Sleep(1 * time.Second)
+	time.Sleep(2 * time.Second)
 	infoLogger.Println("Waiting for email input...")
 	var emailField selenium.WebElement
 	emailField, err = driver.FindElement(selenium.ByID, "i0116")
@@ -68,7 +70,7 @@ func Send(message, username, password string, recipients []string) (err error) {
 		return err
 	}
 	infoLogger.Println("Email input filled!")
-	time.Sleep(1 * time.Second)
+	time.Sleep(2 * time.Second)
 	var loginNextButton selenium.WebElement
 	loginNextButton, err = driver.FindElement(selenium.ByID, "idSIButton9")
 	if err != nil {
@@ -76,8 +78,9 @@ func Send(message, username, password string, recipients []string) (err error) {
 	}
 	loginNextButton.Click()
 	infoLogger.Println("Login next button clicked!")
-	time.Sleep(1 * time.Second)
+	time.Sleep(2 * time.Second)
 	infoLogger.Println("Waiting for password input...")
+	time.Sleep(7 * time.Second)
 	var passwordField selenium.WebElement
 	passwordField, err = driver.FindElement(selenium.ByID, "i0118")
 	if err != nil {
@@ -88,16 +91,17 @@ func Send(message, username, password string, recipients []string) (err error) {
 		return err
 	}
 	infoLogger.Println("Password input filled!")
-	time.Sleep(1 * time.Second)
+	time.Sleep(2 * time.Second)
 	infoLogger.Println("Waiting for sign in button...")
 	var signInButton selenium.WebElement
 	signInButton, err = driver.FindElement(selenium.ByID, "idSIButton9")
 	if err != nil {
 		return err
 	}
+	time.Sleep(3 * time.Second)
 	signInButton.Click()
 	infoLogger.Println("Sign in button clicked!")
-	time.Sleep(1500 * time.Millisecond)
+	time.Sleep(2500 * time.Millisecond)
 	infoLogger.Println("Waiting for accept button...")
 	var acceptButton selenium.WebElement
 	acceptButton, err = driver.FindElement(selenium.ByID, "acceptButton")
@@ -118,7 +122,7 @@ func Send(message, username, password string, recipients []string) (err error) {
 		return err
 	}
 	infoLogger.Println("New message button clicked!")
-	time.Sleep(5 * time.Second)
+	time.Sleep(8 * time.Second)
 	infoLogger.Println("Waiting for message recipient...")
 	var messageRecipient selenium.WebElement
 	messageRecipient, err = driver.FindElement(selenium.ByCSSSelector, "div[aria-label='To']")
@@ -129,11 +133,60 @@ func Send(message, username, password string, recipients []string) (err error) {
 	if err != nil {
 		return err
 	}
-	recipientString := strings.Join(recipients, "; ") + "; " // Ensure proper Outlook formatting
-	err = messageRecipient.SendKeys(recipientString + selenium.TabKey)
+
+	for i, recipient := range recipients {
+		infoLogger.Printf("Adding recipient: %s, %v\n", recipient, i)
+		err = messageRecipient.SendKeys(recipient + ";")
+		if err != nil {
+			return err
+		}
+		var sleeptime time.Duration = time.Duration(rand.Intn(501)+100) * time.
+			Millisecond
+		time.Sleep(sleeptime)
+	}
+
+	err = messageRecipient.SendKeys(selenium.TabKey)
 	if err != nil {
 		return err
 	}
-	time.Sleep(1000 * time.Millisecond) // Changed to Millisecond
+
+	time.Sleep(200 * time.Millisecond)
+
+	var subjectField selenium.WebElement
+	subjectField, err = driver.FindElement(selenium.ByCSSSelector, "input[aria-label='Add a subject']")
+	err = subjectField.SendKeys(subject)
+	if err != nil {
+		return err
+	}
+
+	time.Sleep(500 * time.Millisecond)
+
+	var messageField selenium.WebElement
+	messageField, err = driver.FindElement(selenium.ByXPATH, "//div[contains(@class, 'dFCbN') and contains(@class, 'dnzWM')]\n")
+	if err != nil {
+		return err
+	}
+	err = messageField.Click()
+	if err != nil {
+		return err
+	}
+	err = messageField.SendKeys(message)
+	if err != nil {
+		return err
+	}
+
+	time.Sleep(500 * time.Millisecond)
+
+	var sendButton selenium.WebElement
+	sendButton, err = driver.FindElement(selenium.ByCSSSelector, "button[aria-label='Send']")
+	if err != nil {
+		return err
+	}
+	err = sendButton.Click()
+	if err != nil {
+		return err
+	}
+	time.Sleep(2321321123 * time.Second)
+
 	return nil
 }

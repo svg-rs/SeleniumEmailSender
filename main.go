@@ -7,7 +7,6 @@ import (
 	"log"
 	"os"
 	"strings"
-	"time"
 )
 
 var (
@@ -18,13 +17,14 @@ var (
 
 func main() {
 	var err error
-	message, username, password, outlook, gmail, recipientsFile := getFlags()
+	subject, message, username, password, outlook, gmail,
+		recipientsFile := getFlags()
 	var recipients []string
 	recipients = handleRecipientsFile(recipientsFile)
 
 	switch {
 	case outlook:
-		err = Outlooksend.Send(message, username, password, recipients)
+		err = Outlooksend.Send(subject, message, username, password, recipients)
 		handlerError(err)
 	case gmail:
 		fmt.Println("Gmail functionality not implemented yet.")
@@ -35,6 +35,7 @@ func main() {
 
 func handleRecipientsFile(file string) []string {
 	data, err := os.ReadFile(file)
+
 	if err != nil {
 		handlerError(err)
 		return nil
@@ -51,17 +52,19 @@ func handleRecipientsFile(file string) []string {
 	return recipients
 }
 
-func getFlags() (string, string, string, bool, bool, string) {
+func getFlags() (string, string, string, string, bool, bool, string) {
 	outlook := flag.Bool("outlook", false, "Send email using outlook")
 	gmail := flag.Bool("gmail", false, "Send email using gmail")
 	message := flag.String("message", "", "Message to send")
 	username := flag.String("username", "", "Username to send email")
 	password := flag.String("password", "", "Password to send email")
+	subject := flag.String("subject", "", "Subject of the email")
 	recipientsFile := flag.String("recipients", "", "Recipients of the email in comma separated format in a text file")
 
 	flag.Parse()
 
-	return *message, *username, *password, *outlook, *gmail, *recipientsFile
+	return *subject, *message, *username, *password, *outlook, *gmail,
+		*recipientsFile
 }
 
 func handlerError(err error) {
@@ -76,9 +79,10 @@ func help() {
 	fmt.Println("  -outlook    Send email using outlook")
 	fmt.Println("  -gmail      Send email using gmail")
 	fmt.Println("  -message    The message to send")
+	fmt.Println("  -subject    The subject of the email")
 	fmt.Println("  -username   The username to send email")
 	fmt.Println("  -password   The password for the email account")
-	fmt.Println("  -recipients  The recipients of the email in comma separated format in a text file")
+	fmt.Println("  -recipients The recipients of the email in comma separated format in a text file")
 	fmt.Println("\nFor more information, usage examples, or advanced features, visit the GitHub repository:")
 	fmt.Println("  https://github.com/svg-rs/SeleniumEmailSender")
 }
